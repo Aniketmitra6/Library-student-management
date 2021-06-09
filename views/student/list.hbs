@@ -1,0 +1,36 @@
+<h3><a style="background-color:green;
+             color:white;
+             padding:12px 25px;
+             text-align:center;
+             text-decoration:none;
+             display:inline-block;
+             font-size:12px" href="/student">Issue a new book</a><br><br>All issued books</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>BookName</th>
+            <th>AuthorName</th>
+            <th>DateOfIssue</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.book}}</td>
+            <td>{{this.author}}</td>
+            <td>{{this.doi}}</td>
+            <td>
+                <a href="/student/{{this._id}}"><button>Edit</button></a>
+                <a href="/student/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><button>Delete</button></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
